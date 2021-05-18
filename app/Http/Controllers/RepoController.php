@@ -6,58 +6,48 @@ use Illuminate\Http\Request;
 
 class RepoController extends Controller
 {
+    private $url;
+    private $languages;
+
+
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get the value of languages
      */
-    public function index()
+    public function getLanguages()
     {
-        //
+        return $this->languages;
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Set the value of languages
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return  self
      */
-    public function store(Request $request)
+    public function setLanguages($languages)
     {
-        //
+        $this->languages = $languages;
+
+        return $this;
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get the value of url
      */
-    public function show($id)
+    public function getUrl()
     {
-        //
+        return $this->url;
     }
 
     /**
-     * Update the specified resource in storage.
+     * Set the value of url
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return  self
      */
-    public function update(Request $request, $id)
+    public function setUrl($url)
     {
-        //
-    }
+        $this->url = $url;
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $this;
     }
 }
