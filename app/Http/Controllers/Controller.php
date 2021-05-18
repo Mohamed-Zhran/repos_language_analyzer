@@ -12,9 +12,4 @@ use Illuminate\Support\Facades\Redirect;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    public function aa() {
-        
-        return view('welcome')
-    }
 }
