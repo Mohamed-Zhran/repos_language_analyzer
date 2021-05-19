@@ -35,4 +35,14 @@ class LanguageController extends Controller {
         return count($this->repos);
     }
 
+    public function printLanguageDetails() {
+        echo 'Language name: ' . $this->getName();
+        echo '<br>';
+        echo 'Repos Count: ' . $this->getReposCount();
+        echo '<br>';
+        echo 'Repos in ' . $this->getName() . ' Language: ';
+        print_r($this->getRepos());
+        echo '<br>';
+        echo '<br>';
+    }
 }
