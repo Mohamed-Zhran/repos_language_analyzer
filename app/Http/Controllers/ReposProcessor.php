@@ -38,6 +38,14 @@ class ReposProcessor extends Controller {
         }
     }
 
+    private function storeLanguages() {
+        foreach ($this->reposLanguagesUrls as $repoUrl => $languageUrl) {
+            foreach ($this->getLanguageFromApi($languageUrl) as $language => $percentage) {
+                $this->addLanguageIfNotExistWithRepo($language, $repoUrl);
+            }
+        }
+    }
+
     private function getLanguageFromApi($languageUrl) {
         $response = Http::get($languageUrl);
         if ($response->ok()) {
