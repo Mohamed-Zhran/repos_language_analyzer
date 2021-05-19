@@ -38,6 +38,13 @@ class ReposProcessor extends Controller {
         }
     }
 
+    private function getLanguageFromApi($languageUrl) {
+        $response = Http::get($languageUrl);
+        if ($response->ok()) {
+            return $response->json();
+        }
+    }
+
     private function addLanguageIfNotExistWithRepo($language, $repoUrl) {
         if (!array_key_exists($language, $this->languages)) {
             $this->setAllLanguages($language);
