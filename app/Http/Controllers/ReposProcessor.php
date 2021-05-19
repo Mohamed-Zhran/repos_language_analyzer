@@ -41,4 +41,10 @@ class ReposProcessor extends Controller {
     private function setAllLanguages($language) {
         $this->languages[$language] = new LanguageController($language);
     }
+
+    private function addRepoToLanguage($language, $repoUrl) {
+        $this->languages[$language]->pushRepoUrlToLanguage($repoUrl);
+    }
+
+
 }
