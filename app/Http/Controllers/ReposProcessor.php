@@ -17,7 +17,7 @@ class ReposProcessor extends Controller {
         $this->languages = [];
         $this->reposLanguagesUrls = [];
         $this->dateSinceMonth = date('Y-m-d', strtotime('-30 days'));
-        $this->apiUrl = "https://api.github.com/search/repositories?q=created:%3E$this->dateSinceMonth&sort=stars&order=desc&per_page=5";
+        $this->apiUrl = "https://api.github.com/search/repositories?q=created:%3E$this->dateSinceMonth&sort=stars&order=desc&per_page=100";
     }
 
     public function start() {
