@@ -38,6 +38,15 @@ class ReposProcessor extends Controller {
         }
     }
 
+    private function addLanguageIfNotExistWithRepo($language, $repoUrl) {
+        if (!array_key_exists($language, $this->languages)) {
+            $this->setAllLanguages($language);
+            $this->addRepoToLanguage($language, $repoUrl);
+        } else {
+            $this->addRepoToLanguage($language, $repoUrl);
+        }
+    }
+
     private function setAllLanguages($language) {
         $this->languages[$language] = new LanguageController($language);
     }
@@ -45,6 +54,4 @@ class ReposProcessor extends Controller {
     private function addRepoToLanguage($language, $repoUrl) {
         $this->languages[$language]->pushRepoUrlToLanguage($repoUrl);
     }
-
-
 }
